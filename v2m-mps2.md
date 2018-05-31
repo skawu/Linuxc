@@ -24,7 +24,7 @@
 
 GitHub仓库地址：[RT-Thread](https://github.com/RT-Thread/rt-thread)
 
-使用env工具生成v2m-mps2工程，具体方法参考[RT-Thread官方文档](https://www.rt-thread.org/document/site/docs/tools/env/env-user-manual/)
+使用env工具生成v2m-mps2工程，具体方法参考[RT-Thread官方文档](https://www.rt-thread.org/document/site/rtthread-development-guide/rtthread-tool-manual/env/env-user-manual/)
 
 ### 打开工程并实现在线仿真
 
