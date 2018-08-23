@@ -1,0 +1,100 @@
+.. _debug:
+
+在线调试
+==================================================
+
+Keil工具能够正常烧写后，可通过点击"start/stop debug"启动在线调试。
+在启动调试之前，需要增改一些配置，下面以helloworld程序(路径：samples\\peripheral\\
+helloworld)为例说明如何在Keil下进行调试。
+
+1. 增加一个ram工程
+
+  用Keil打开Manage Project Items，在Project Targets一栏添加一个ram工程，如图所示	
+
+.. figure:: pic/debug_add_ram.png
+   :width: 520px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   增加一个ram工程
+
+随后选择该工程，如图所示:
+
+.. figure:: pic/debug_select_ram.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   选择ram工程   
+
+2. 配置ram工程
+
+- 新建debug.ini文件
+	
+  在helloworld工程目录下新建一个名为debug.ini的配置文件，文件内容如下:
+
+   .. code-block:: console
+   
+	FUNC void CloseWatchDog (void)
+	{
+	  _WDWORD(0x4000401C, 0x20);
+	} 
+	FUNC void Setup (void)
+	{
+	  SP = _RDWORD(0x20001000);
+	  PC = _RDWORD(0x20001004);
+	}
+	CloseWatchDog();
+	LOAD .\Objects\helloworld.axf INCREMENTAL
+	Setup();
+	g,main
+
+  说明: helloworld.axf是当前工程编译产生的.axf文件。
+
+- 设置debug参数
+
+	1) Load Application at Startup: 不勾选。
+	2) Run to main:停在main入口: 不勾选。
+	3) Initialization File: 载入debug.ini文件
+		
+.. figure:: pic/debug_ini.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   设置debug参数\
+
+- 删除编程算法
+
+  打开Keil Options/Utilities/Settings，点击先前添加的名为ATB110X-SPI0的烧写算法。\
+  点击remove，如图所示:\
+
+.. figure:: pic/debug_remove_algo.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   修改编程算法地址\		
+
+3. 设置断点\
+
+  为方便的控制程序的运行，可在app_main入口处设置一个断点，如下图所示:\
+
+.. figure:: pic/debug_breakpoint.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   设置断点\
+
+4. 启动调试\
+
+  点击 "start/stop debug" 启动调试，点击调试工具栏中的按钮单步调试。 \
+ 
+.. figure:: pic/debug_debug.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   启动调试		
+

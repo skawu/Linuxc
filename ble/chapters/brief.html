@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. ZS110A简介 &mdash; ZS110A文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/../_common/zephyr-custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="索引"
+              href="../genindex.html"/>
+        <link rel="search" title="搜索" href="../search.html"/>
+    <link rel="top" title="ZS110A文档" href="../index.html"/>
+        <link rel="next" title="3. 开发环境搭建" href="setup_environment.html"/>
+        <link rel="prev" title="1. 概述" href="introduce.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> ZS110A 项目文档
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduce.html">1. 概述</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. ZS110A简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.1. 硬件资源介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.2. 软件资源介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2.3. 开发板概况</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup_environment.html">3. 开发环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">4. 固件烧写</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">5. 在线调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ZS110A 项目文档</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. ZS110A简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/chapters/brief.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="zs110a">
+<span id="brief"></span><h1>2. ZS110A简介<a class="headerlink" href="#zs110a" title="永久链接至标题">¶</a></h1>
+<p>ZS110A是基于炬芯科技新一代的低功耗蓝牙芯片ATB110X的软件开发套件， 供用户快速评估学习蓝牙、IoT 等功能开发。</p>
+<div class="section" id="id1">
+<h2>2.1. 硬件资源介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>板载蓝牙天线</li>
+<li>1路MIC</li>
+<li>5路PWM</li>
+<li>4个PWM灯，一个电源指示灯</li>
+<li>矩阵按键*6、AD按键*3</li>
+<li>1个USB口</li>
+<li>1个红外发射头，1个红外接收头</li>
+<li>板载daplink</li>
+<li>1个reset键，一个电源开关，一个电源选择开关</li>
+<li>两种供电方式: usb、电池</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>2.2. 软件资源介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>ZS110A 提供完整功能的 SDK 框架供用户参考开发， 并提供大量的使用示例和参考代码。</p>
+<ul class="simple">
+<li>蓝牙语音遥控器示例</li>
+<li>蓝牙profile示例</li>
+<li>蓝牙主机、主从示例</li>
+<li>各个驱动模块示例</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>2.3. 开发板概况<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>开发板由核心板和底板构成， 如图所示:</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/zs110a_evb_blocks.png"><img alt="Configuration Hierarchy" src="../_images/zs110a_evb_blocks.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">开发板概况图</span></p>
+</div>
+<p>在使用前， 需要对开发板进行一些检查并连接串口:</p>
+<ul class="simple">
+<li>Daplink: 短接SWCLK、 SWDIO。</li>
+<li>电源: 电源开关选择ON, 电源选择开关选择USB&amp;LK。</li>
+<li>UART: GPIO2接串口TX， GPIO3接串口RX (UART0)。</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup_environment.html" class="btn btn-neutral float-right" title="3. 开发环境搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduce.html" class="btn btn-neutral" title="1. 概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      最后更新于 8月 15, 2018.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

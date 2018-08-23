@@ -1,0 +1,80 @@
+.. _load:
+
+固件烧写
+==================================================
+
+编译成功后，在Keil工具界面点击"Load" 即可完成烧写。
+
+
+配置
+--------------------------------------------------
+
+1. 拷贝KEIL FLM
+
+  将scripts\\utils\\keil_flash\\ATB110X_SPI0.FLM拷贝到C:\\Keil\\ARM\\Flash\\。\
+  注意：请根据自己Keil安装的路径调整拷贝的路径。
+	
+2. 根据 3.2 调试工具一节配置Keil
+
+3. 打开Keil Options/Utilities/Settings，如图所示。
+
+- Download Function：选择"Erase Sectors"，"Program"，"Verify"。\
+  注：如果只需要擦除，请只勾选"Erase Sectors" 。
+- RAM for Algorithm： 起始地址0x20000000，size 0x4000。
+- Programming Algorithm：
+
+  点击"remove"删除默认的"New Device 256kB Flash"，然后点击"Add"选择 \
+  ATB110X-SPI0。 然后编辑Address Range： start配置为0x20000000，size采用默认值。\
+  如图所示。\
+
+.. figure:: pic/flash_download.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   Options/Utilities/Settings配置	
+
+.. figure:: pic/flash_download_algo.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   增加flash编程算法	
+   
+烧写
+--------------------------------------------------
+
+下面以sample/peripheral/helloworld工程程序为例，介绍固件的烧写。 helloworld示例程序代码如下:
+
+   .. code-block:: c
+
+	void app_main(void)
+	{
+	    while (1) {
+		    printk("Hello World!\n");
+		    k_sleep(1000);
+	    }
+	}
+
+完成4.1节配置，点击下图中的编译按钮编译成功后，点击Keil工程中的LOAD即可完成烧写。
+
+.. figure:: pic/load.png
+   :width: 600px
+   :align: center
+   :alt: Configuration Hierarchy
+
+   编译烧写方法
+   
+烧录完成后，按下reset 按键，系统将重启，串口将循环输出Hello World!:
+
+   .. code-block:: console
+
+    Hello World!
+    Hello World!
+    Hello World!
+
+
+   
+   
+   
+   
